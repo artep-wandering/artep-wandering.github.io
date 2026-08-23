@@ -171,18 +171,18 @@ body {
   margin: 10px 0 80px;
 }
 
+/* MOBIL */
 @media (max-width: 900px) {
-  .page {
-    display: block;
-  }
 
 .sidebar {
     position: relative;
     width: 100%;
-    min-height: auto;
+    height: auto;
+    min-height: 0;
+   padding: 28px 22px 22px;
     border-right: none;
     border-bottom: 1px solid #d9d9d5;
-    padding: 28px 22px 22px;
+   
   }
 
 .brand {
