@@ -27,7 +27,7 @@
     .sidebar {
       width: 280px;
       min-height: 100vh;
-      padding: 70px 40px 40px;
+      padding: 68px 38px 38px;
       border-right: 1px solid #d9d9d5;
       position: fixed;
       left: 0;
@@ -38,7 +38,7 @@
     }
 
     .brand {
-      margin-bottom: 55px;
+      margin-bottom: 54px;
     }
 
     .brand-title {
@@ -65,7 +65,6 @@
       color: #555;
       font-size: 12px;
       letter-spacing: 2px;
-      transition: 0.2s;
     }
 
     .menu a:hover {
@@ -80,73 +79,91 @@
       letter-spacing: 1px;
     }
 
-    /* 右側內容 */
+    /* 右側 */
     .content {
       margin-left: 280px;
       width: calc(100% - 280px);
       padding: 70px 55px 90px;
     }
 
-    .hero {
+    /* 每一組雙照片 */
+    .postcard-row {
       display: grid;
-      grid-template-columns: 1.35fr 1fr;
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 30px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+
+    .postcard-card {
+      display: flex;
+      flex-direction: column;
     }
 
     .photo {
+      width: 100%;
+      aspect-ratio: 3 / 2;
       background: #dededb;
-      min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #888;
       font-size: 12px;
       letter-spacing: 3px;
+      overflow: hidden;
     }
 
-    .photo.small {
-      min-height: 520px;
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .story {
-      max-width: 680px;
-      padding: 70px 0 40px;
+    .meta {
+      margin-top: 24px;
     }
 
     .post-number {
       font-size: 11px;
       letter-spacing: 3px;
       color: #777;
-      margin-bottom: 22px;
+      margin-bottom: 12px;
     }
 
-    .story h1 {
-      font-size: 34px;
+    .date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 16px;
+    }
+
+    .title {
+      font-size: 24px;
       font-weight: 400;
       line-height: 1.55;
-      margin: 0 0 28px;
+      margin: 0 0 16px;
     }
 
-    .story p {
-      font-size: 16px;
-      line-height: 2;
+    .excerpt {
+      font-size: 15px;
+      line-height: 1.9;
       color: #555;
-      margin: 0;
+      max-width: 560px;
     }
 
     .read-more {
       display: inline-block;
-      margin-top: 30px;
-      color: #222;
+      margin-top: 18px;
       text-decoration: none;
-      font-size: 12px;
+      color: #222;
+      font-size: 11px;
       letter-spacing: 2px;
     }
 
     .divider {
       border-top: 1px solid #ddd;
-      margin: 70px 0 0;
+      margin: 10px 0 80px;
     }
 
     @media (max-width: 900px) {
@@ -158,13 +175,13 @@
         position: relative;
         width: 100%;
         min-height: auto;
-        padding: 28px 22px 22px;
         border-right: none;
         border-bottom: 1px solid #d9d9d5;
+        padding: 28px 22px 22px;
       }
 
       .brand {
-        margin-bottom: 22px;
+        margin-bottom: 20px;
       }
 
       .brand-title {
@@ -187,22 +204,14 @@
         padding: 28px 20px 60px;
       }
 
-      .hero {
+      .postcard-row {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 55px;
+        margin-bottom: 60px;
       }
 
-      .photo,
-      .photo.small {
-        min-height: 300px;
-      }
-
-      .story {
-        padding-top: 40px;
-      }
-
-      .story h1 {
-        font-size: 27px;
+      .title {
+        font-size: 22px;
       }
     }
   </style>
@@ -237,36 +246,63 @@
 
     <main class="content">
 
-      <section class="hero">
-        <div class="photo">
-          PHOTO 01
-        </div>
+      <!-- 最新兩篇永遠放最前面 -->
+      <section class="postcard-row">
 
-        <div class="photo small">
-          PHOTO 02
-        </div>
-      </section>
+        <!-- 最新一篇 -->
+        <article class="postcard-card">
 
-      <section class="story">
+          <div class="photo">
+            PHOTO #002
+          </div>
 
-        <div class="post-number">
-          POSTCARD 001
-        </div>
+          <div class="meta">
+            <div class="post-number">POSTCARD #002</div>
+            <div class="date">23 AUG 2026</div>
 
-        <h1>
-          給處在動盪環境，<br>
-          不知如何面對的你。
-        </h1>
+            <h2 class="title">
+              第二張明信片的標題
+            </h2>
 
-        <p>
-          或許，我們控制不了環境的動盪。<br>
-          但我們可以控制的，是讓自己的心像水平儀一樣，<br>
-          隨著動盪，時刻調整回平靜的位置。
-        </p>
+            <div class="excerpt">
+              這裡放第二張明信片的短文摘要。
+            </div>
 
-        <a class="read-more" href="#">
-          READ →
-        </a>
+            <a class="read-more" href="#">
+              READ →
+            </a>
+          </div>
+
+        </article>
+
+        <!-- 上一篇 -->
+        <article class="postcard-card">
+
+          <div class="photo">
+            PHOTO #001
+          </div>
+
+          <div class="meta">
+            <div class="post-number">POSTCARD #001</div>
+            <div class="date">16 AUG 2026</div>
+
+            <h2 class="title">
+              給處在動盪環境，<br>
+              不知如何面對的你。
+            </h2>
+
+            <div class="excerpt">
+              或許，我們控制不了環境的動盪。<br>
+              但我們可以控制的，是讓自己的心像水平儀一樣，
+              隨著動盪，時刻調整回平靜的位置。
+            </div>
+
+            <a class="read-more" href="#">
+              READ →
+            </a>
+          </div>
+
+        </article>
 
       </section>
 
