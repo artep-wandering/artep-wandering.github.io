@@ -20,7 +20,7 @@ body {
 /* 左側固定欄 */
 .sidebar {
   width: 280px;
-  min-height: 100vh;
+  height: 100vh;
   padding: 68px 38px 38px;
   border-right: 1px solid #d9d9d5;
    position: fixed;
