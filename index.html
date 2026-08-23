@@ -90,8 +90,8 @@
     .postcard-row {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
-      gap: 30px;
-      margin-bottom: 80px;
+      column-gap: 30px;
+      row-gap: 80px;
       align-items: start;
     }
 
@@ -119,7 +119,12 @@
       object-fit: cover;
       display: block;
     }
-
+    .photo-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    
     .meta {
       margin-top: 24px;
     }
@@ -244,71 +249,53 @@
 
     </aside>
 
-    <main class="content">
+<main class="content">
 
-      <!-- 最新兩篇永遠放最前面 -->
-      <section class="postcard-row">
+  <section class="postcard-row">
 
-        <!-- 最新一篇 -->
-        <article class="postcard-card">
+    {% for post in site.posts %}
 
+      <article class="postcard-card">
+
+        <a href="{{ post.url }}" class="photo-link">
           <div class="photo">
-            PHOTO #002
+            <img src="{{ post.image }}" alt="{{ post.title }}">
+          </div>
+        </a>
+
+        <div class="meta">
+
+          <div class="post-number">
+            POSTCARD #{{ post.number }}
           </div>
 
-          <div class="meta">
-            <div class="post-number">POSTCARD #002</div>
-            <div class="date">23 AUG 2026</div>
+          <div class="date">
+            {{ post.date | date: "%d %b %Y" | upcase }}
+          </div>
 
-            <h2 class="title">
-              第二張明信片的標題
-            </h2>
+          <h2 class="title">
+            {{ post.title }}
+          </h2>
 
+          {% if post.excerpt_text %}
             <div class="excerpt">
-              這裡放第二張明信片的短文摘要。
+              {{ post.excerpt_text }}
             </div>
+          {% endif %}
 
-            <a class="read-more" href="#">
-              READ →
-            </a>
-          </div>
+          <a class="read-more" href="{{ post.url }}">
+            READ →
+          </a>
 
-        </article>
+        </div>
 
-        <!-- 上一篇 -->
-        <article class="postcard-card">
+      </article>
 
-          <div class="photo">
-            <img src="images/postcard-001.jpg" alt="Postcard #001">
-          </div>
+    {% endfor %}
 
-          <div class="meta">
-            <div class="post-number">POSTCARD #001</div>
-            <div class="date">16 AUG 2026</div>
+  </section>
 
-            <h2 class="title">
-              給處在動盪環境，<br>
-              不知如何面對的你。
-            </h2>
-
-            <div class="excerpt">
-              或許，我們控制不了環境的動盪。<br>
-              但我們可以控制的，是讓自己的心像水平儀一樣，
-              隨著動盪，時刻調整回平靜的位置。
-            </div>
-
-            <a class="read-more" href="postcards/001.html">
-              READ →
-            </a>
-          </div>
-
-        </article>
-
-      </section>
-
-      <div class="divider"></div>
-
-    </main>
+</main>
 
   </div>
 
