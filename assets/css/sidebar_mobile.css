@@ -1,0 +1,35 @@
+/* SIDEBAR MOBILE ONLY */
+
+@media (max-width: 900px) {
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    padding: 28px 22px 22px;
+
+    border-right: none;
+    border-bottom: 1px solid #d9d9d5;
+  }
+
+  .brand {
+    margin-bottom: 20px;
+  }
+
+  .brand-title {
+    font-size: 27px;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+}
