@@ -1,21 +1,88 @@
 /*sidebar 配色 */
+/* 左側固定欄 */
 .sidebar {
   width: 280px;
-  min-height: 100vh;
+  height: 100vh;
   padding: 68px 38px 38px;
   border-right: 1px solid #d9d9d5;
-  position: fixed;
+   position: fixed;
   left: 0;
   top: 0;
-  background: #f1f0eb;
-
+  background: #f1f2f2;
   display: flex;
   flex-direction: column;
+  }
+
+.brand {
+ margin-bottom: 54px;
 }
+
+.brand-title {
+  font-size: 40px;
+  letter-spacing: 10px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.brand-author {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #555;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.menu a:hover {
+  color: #111;
+}
+
 .sidebar-bottom {
   margin-top: auto;
   font-size: 11px;
   color: #888;
   line-height: 1.8;
   letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .page {
+    display: block;
+  }
+
+.sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #d9d9d5;
+    padding: 28px 22px 22px;
+  }
+
+.brand {
+    margin-bottom: 20px;
+  }
+
+.brand-title {
+    font-size: 27px;
+}
+
+.menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.sidebar-bottom {
+    display: none;
 }
