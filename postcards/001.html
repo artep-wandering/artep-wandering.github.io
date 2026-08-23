@@ -174,19 +174,24 @@
       background: none;
       border: none;
       padding: 0;
-      color: #555;
+      color: #777;
       font-family: inherit;
       font-size: 14px;
+      font-weight: 300;
       letter-spacing: 1px;
       cursor: pointer;
-      transition: 0.2s;
+      /*transition: 0.2s; */
     }
-    .like:hover {
-      color: #111;
+    .like .heart {
+      display: inline-block;
+      width: 18px;
+      color: #777;
+      font-size: 14px;
+      font-weight: 300;
     }
 
-    .like.liked {
-      color: #222;
+    .like.liked .heart {
+      color: #e88b8b;
     }
 
     .comment-intro {
@@ -353,8 +358,9 @@
 
       <section class="feedback">
 
-        <button class="like" id="likeButton" onclick="toggleLike()">
-          ♡ LIKE
+        <button id="likeButton" class="like">
+          <span class="heart">♡</span>
+          <span class="like-text">Like this postcard</span>
         </button>
 
         <div class="comment-intro">
@@ -386,17 +392,24 @@
   
 <script>
   const likeButton = document.getElementById("likeButton");
+  const heart = likeButton.querySelector(".heart");
+  const likeText = likeButton.querySelector(".like-text");
   const storageKey = "postcard-001-liked";
 
   function updateLikeButton() {
     const liked = localStorage.getItem(storageKey) === "true";
 
     if (liked) {
-      likeButton.textContent = "♥ I’m glad you like this postcard!";
+      heart.textContent = "♥";
+      likeText.textContent = "I’m glad you like this postcard!";
+      likeButton.classList.add("liked");
     } else {
-      likeButton.textContent = "♡ LIKE";
+      heart.textContent = "♡";
+      likeText.textContent = "Like this postcard";
+      likeButton.classList.remove("liked");
     }
   }
+
   likeButton.addEventListener("click", function () {
     const liked = localStorage.getItem(storageKey) === "true";
 
