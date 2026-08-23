@@ -1,0 +1,15 @@
+/*sidebar 配色 */
+.sidebar {
+  width: 280px;
+  min-height: 100vh;
+  padding: 68px 38px 38px;
+  border-right: 1px solid #d9d9d5;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #f1f0eb;
+
+  display: flex;
+  flex-direction: column;
+}
