@@ -7,9 +7,15 @@
   position: fixed;
   left: 0;
   top: 0;
-
   background: #f1f0eb;
 
   display: flex;
   flex-direction: column;
+}
+.sidebar-bottom {
+  margin-top: auto;
+  font-size: 11px;
+  color: #888;
+  line-height: 1.8;
+  letter-spacing: 1px;
 }
