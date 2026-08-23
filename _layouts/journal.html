@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }} | 浪遊</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f7f5;
+      color: #222;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+    }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      width: 280px;
+      min-height: 100vh;
+      padding: 68px 38px 38px;
+      border-right: 1px solid #d9d9d5;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #f7f7f5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      margin-bottom: 54px;
+    }
+
+    .brand-title {
+      font-size: 34px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .brand-author {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #666;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+
+    /* JOURNAL ARTICLE */
+
+    .content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 90px 55px 120px;
+    }
+
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .journal-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      color: #999;
+      margin-bottom: 15px;
+    }
+
+    .date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 45px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.55;
+      margin: 0 0 50px;
+    }
+
+    .hero-image {
+      width: 100%;
+      margin-bottom: 55px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .text {
+      font-size: 16px;
+      line-height: 2.2;
+      color: #444;
+    }
+
+    .text p {
+      margin: 0 0 30px;
+    }
+
+    .signature {
+      margin-top: 60px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #777;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .page {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 28px 22px 22px;
+        border-right: none;
+        border-bottom: 1px solid #d9d9d5;
+      }
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .brand-title {
+        font-size: 27px;
+      }
+
+      .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 55px 25px 80px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="brand-title">浪遊</div>
+      <div class="brand-author">Arte:p</div>
+    </div>
+
+    <nav class="menu">
+      <a href="/">HOME</a>
+      <a href="/postcards/">POSTCARDS</a>
+      <a href="/journal/">JOURNAL</a>
+      <a href="/about/">ABOUT</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      Photography<br>
+      Travel<br>
+      Words<br><br>
+      © 2026 Arte:p
+    </div>
+
+  </aside>
+
+
+  <main class="content">
+
+    <article class="article">
+
+      <div class="journal-label">
+        JOURNAL
+      </div>
+
+      <div class="date">
+        {{ page.date | date: "%d %b %Y" | upcase }}
+      </div>
+
+      <h1>
+        {{ page.title }}
+      </h1>
+
+      {% if page.image %}
+        <div class="hero-image">
+          <img src="{{ page.image }}" alt="{{ page.title }}">
+        </div>
+      {% endif %}
+
+      <div class="text">
+        {{ content }}
+      </div>
+
+      <div class="signature">
+        — Arte:p
+      </div>
+
+    </article>
+
+  </main>
+
+</div>
+
+</body>
+</html>
