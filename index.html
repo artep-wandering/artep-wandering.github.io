@@ -234,31 +234,8 @@ layout: null
 <body>
 
   <div class="page">
-
-    <aside class="sidebar">
-
-      <div class="brand">
-        <div class="brand-title">浪遊</div>
-        <div class="brand-author">Arte:p</div>
-      </div>
-
-      <nav class="menu">
-        <a href="/">HOME</a>
-        <a href="/postcards">POSTCARDS</a>
-        <a href="/journal">JOURNAL</a>
-        <a href="/about">ABOUT</a>
-        <a href="/contact/">CONTACT</a>
-      </nav>
-
-      <div class="sidebar-bottom">
-        Photography<br>
-        Travel<br>
-        Words<br><br>
-        © 2026 Arte:p
-      </div>
-
-    </aside>
-
+    {% include sidebar.html %}
+   
 <main class="content">
 
   <section class="postcard-row">
@@ -275,33 +252,6 @@ layout: null
         </a>
       </article>
       {% endfor %} 
-        <!-- hide postcard no. and date
-        <div class="meta">
-
-          <div class="post-number">
-            POSTCARD #{{ post.number }}
-          </div>
-
-          <div class="date">
-            {{ post.date | date: "%d %b %Y" | upcase }}
-          </div>
-         
-          <h2 class="title">
-            {{ post.title }}
-          </h2>
-
-          {% if post.excerpt_text %}
-            <div class="excerpt">
-              {{ post.excerpt_text }}
-            </div>
-          {% endif %}
-
-          <a class="read-more" href="{{ post.url }}">
-            READ →
-          </a>
-          -->
-
-
 
   </section>
 
