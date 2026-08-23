@@ -1,5 +1,5 @@
-/* HOME only */
-
+/* HOME DESTOP ONLY */
+/* VERSION: home_css_0.0.11 */
 * {
   box-sizing: border-box;
   }
@@ -171,7 +171,9 @@ body {
   margin: 10px 0 80px;
 }
 
-/* MOBIL */
+
+/* MOBILE */
+/* MOVE TO home_mobile_css 20260824
 @media (max-width: 900px) {
 
   .page {
@@ -222,4 +224,5 @@ body {
   .title {
       font-size: 22px;
   }
+  */
 }
