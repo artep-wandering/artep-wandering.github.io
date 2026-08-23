@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Postcard #001 | 浪遊</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f7f5;
+      color: #222;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+    }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* LEFT SIDEBAR */
+
+    .sidebar {
+      width: 280px;
+      min-height: 100vh;
+      padding: 68px 38px 38px;
+      border-right: 1px solid #d9d9d5;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #f7f7f5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      margin-bottom: 54px;
+    }
+
+    .brand-title {
+      font-size: 34px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .brand-author {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #666;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .menu a:hover {
+      color: #111;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+    /* ARTICLE */
+
+    .content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 70px 55px 100px;
+    }
+
+    .article {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .post-number {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 32px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      margin-bottom: 55px;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .writing {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.65;
+      margin: 0 0 38px;
+    }
+
+    .text {
+      font-size: 16px;
+      line-height: 2.15;
+      color: #444;
+    }
+
+    .signature {
+      margin-top: 38px;
+      text-align: right;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    /* FEEDBACK */
+
+    .feedback {
+      max-width: 620px;
+      margin: 75px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
+
+    .like {
+      font-size: 14px;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .comment-intro {
+      margin-top: 42px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    .comment-placeholder {
+      margin-top: 18px;
+      border: 1px solid #ddd;
+      padding: 18px;
+      color: #999;
+      font-size: 13px;
+    }
+
+    .navigation {
+      max-width: 620px;
+      margin: 70px auto 0;
+      padding-top: 25px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navigation a {
+      text-decoration: none;
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .page {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 28px 22px 22px;
+        border-right: none;
+        border-bottom: 1px solid #d9d9d5;
+      }
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .brand-title {
+        font-size: 27px;
+      }
+
+      .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 35px 20px 70px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      .hero-photo {
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="brand-title">浪遊</div>
+      <div class="brand-author">Arte:p</div>
+    </div>
+
+    <nav class="menu">
+      <a href="../index.html">HOME</a>
+      <a href="#">POSTCARDS</a>
+      <a href="#">JOURNAL</a>
+      <a href="#">ABOUT</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      Photography<br>
+      Travel<br>
+      Words<br><br>
+      © 2026 Arte:p
+    </div>
+
+  </aside>
+
+
+  <main class="content">
+
+    <article class="article">
+
+      <div class="post-number">
+        POSTCARD #001
+      </div>
+
+      <div class="date">
+        16 AUG 2026
+      </div>
+
+      <div class="hero-photo">
+        <img src="../images/postcard-001.jpg"
+             alt="Postcard #001">
+      </div>
+
+
+      <div class="writing">
+
+        <h1>
+          給處在動盪環境，<br>
+          不知如何面對的你。
+        </h1>
+
+        <div class="text">
+
+          <p>
+            或許，我們控制不了環境的動盪。
+          </p>
+
+          <p>
+            但，我們可以控制的是，<br>
+            讓自己的心像水平儀一樣，<br>
+            隨著動盪，時刻調整回平靜的位置。
+          </p>
+
+        </div>
+
+        <div class="signature">
+          — 浪遊
+        </div>
+
+      </div>
+
+
+      <section class="feedback">
+
+        <div class="like">
+          ♡ 喜歡這張明信片
+        </div>
+
+        <div class="comment-intro">
+          如果這張明信片也讓你想起了什麼，<br>
+          歡迎留下一句話。
+        </div>
+
+        <div class="comment-placeholder">
+          COMMENT — Coming soon
+        </div>
+
+      </section>
+
+
+      <nav class="navigation">
+
+        <span></span>
+
+        <a href="#">
+          NEXT →
+        </a>
+
+      </nav>
+
+    </article>
+
+  </main>
+
+</div>
+
+</body>
+
+</html>
