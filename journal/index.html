@@ -1,0 +1,267 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Journal | 浪遊</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f7f5;
+      color: #222;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+    }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      min-height: 100vh;
+      padding: 68px 38px 38px;
+      border-right: 1px solid #d9d9d5;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #f7f7f5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      margin-bottom: 54px;
+    }
+
+    .brand-title {
+      font-size: 34px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .brand-author {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #666;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .menu a.active {
+      color: #111;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+
+    /* JOURNAL LIST */
+
+    .content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 90px 55px 120px;
+    }
+
+    .journal {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .journal-title {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      color: #777;
+      margin: 0 0 15px;
+    }
+
+    .journal-intro {
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 1px;
+      margin-bottom: 65px;
+    }
+
+    .entry {
+      padding: 28px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    .entry:last-child {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .entry a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .entry-date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .entry-title {
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .entry a:hover .entry-title {
+      opacity: 0.6;
+    }
+
+
+    @media (max-width: 900px) {
+
+      .page {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 28px 22px 22px;
+        border-right: none;
+        border-bottom: 1px solid #d9d9d5;
+      }
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .brand-title {
+        font-size: 27px;
+      }
+
+      .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 55px 25px 80px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <div class="brand-title">浪遊</div>
+      <div class="brand-author">Arte:p</div>
+    </div>
+
+    <nav class="menu">
+      <a href="/">HOME</a>
+      <a href="/postcards/">POSTCARDS</a>
+      <a href="/journal/" class="active">JOURNAL</a>
+      <a href="/about/">ABOUT</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      Photography<br>
+      Travel<br>
+      Words<br><br>
+      © 2026 Arte:p
+    </div>
+
+  </aside>
+
+
+  <main class="content">
+
+    <section class="journal">
+
+      <h1 class="journal-title">
+        JOURNAL
+      </h1>
+
+      <div class="journal-intro">
+        我想留下來的。
+      </div>
+
+
+      {% assign entries = site.journal | sort: "date" | reverse %}
+
+      {% for entry in entries %}
+
+        <article class="entry">
+
+          <a href="{{ entry.url }}">
+
+            <div class="entry-date">
+              {{ entry.date | date: "%d %b %Y" | upcase }}
+            </div>
+
+            <h2 class="entry-title">
+              {{ entry.title }}
+            </h2>
+
+          </a>
+
+        </article>
+
+      {% endfor %}
+
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
