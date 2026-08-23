@@ -23,7 +23,7 @@ body {
   height: 100vh;
   padding: 68px 38px 38px;
   border-right: 1px solid #d9d9d5;
-   position: fixed;
+  position: fixed;
   left: 0;
   top: 0;
   background: #f1f2f2;
@@ -174,48 +174,52 @@ body {
 /* MOBIL */
 @media (max-width: 900px) {
 
-.sidebar {
+  .page {
+    display: block;
+    min-height: 0;
+  }
+  .sidebar {
     position: relative;
     width: 100%;
     height: auto;
     min-height: 0;
-   padding: 28px 22px 22px;
+    padding: 28px 22px 22px;
     border-right: none;
     border-bottom: 1px solid #d9d9d5;
-   
+     
   }
 
-.brand {
-    margin-bottom: 20px;
+    .brand {
+      margin-bottom: 20px;
+    }
+  
+  .brand-title {
+      font-size: 27px;
+  }
+  
+  .menu {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 18px;
   }
 
-.brand-title {
-    font-size: 27px;
-}
+  .sidebar-bottom {
+      display: none;
+  }
+  
+  .content {
+      margin-left: 0;
+      width: 100%;
+      padding: 28px 20px 60px;
+  }
 
-.menu {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 18px;
-}
-
-.sidebar-bottom {
-    display: none;
-}
-
-.content {
-    margin-left: 0;
-    width: 100%;
-    padding: 28px 20px 60px;
-}
-
-.postcard-row {
-    grid-template-columns: 1fr;
-    gap: 55px;
-    margin-bottom: 60px;
-}
-
-.title {
-    font-size: 22px;
+  .postcard-row {
+      grid-template-columns: 1fr;
+      gap: 55px;
+      margin-bottom: 60px;
+  }
+  
+  .title {
+      font-size: 22px;
   }
 }
