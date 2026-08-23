@@ -221,6 +221,13 @@ layout: null
         font-size: 22px;
       }
     }
+
+    /* DEBUG: force all postcards visible */
+    .postcard-card {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
   </style>
 </head>
 
@@ -236,7 +243,7 @@ layout: null
       </div>
 
       <nav class="menu">
-        <a href="/home">HOME</a>
+        <a href="/">HOME</a>
         <a href="/postcards">POSTCARDS</a>
         <a href="/journal">JOURNAL</a>
         <a href="/about">ABOUT</a>
