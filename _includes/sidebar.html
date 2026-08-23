@@ -6,11 +6,32 @@
   </div>
 
   <nav class="menu">
-    <a href="/">HOME</a>
-    <a href="/postcards/">POSTCARDS</a>
-    <a href="/journal/">JOURNAL</a>
-    <a href="/about/">ABOUT</a>
-    <a href="/contact/">CONTACT</a>
+
+    <a href="/"
+       {% if page.url == "/" %}class="active"{% endif %}>
+      HOME
+    </a>
+
+    <a href="/postcards/"
+       {% if page.url contains "/postcards/" %}class="active"{% endif %}>
+      POSTCARDS
+    </a>
+
+    <a href="/journal/"
+       {% if page.url contains "/journal/" %}class="active"{% endif %}>
+      JOURNAL
+    </a>
+
+    <a href="/about/"
+       {% if page.url contains "/about/" %}class="active"{% endif %}>
+      ABOUT
+    </a>
+
+    <a href="/contact/"
+       {% if page.url contains "/contact/" %}class="active"{% endif %}>
+      CONTACT
+    </a>
+
   </nav>
 
   <div class="sidebar-bottom">
