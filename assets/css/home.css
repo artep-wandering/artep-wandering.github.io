@@ -220,10 +220,3 @@ body {
     font-size: 22px;
   }
 }
-
-/* DEBUG: force all postcards visible */
-.postcard-card {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
