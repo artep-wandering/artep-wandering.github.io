@@ -108,17 +108,67 @@ layout: null
       margin: 0 0 45px;
     }
 
-    .postcard-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 32px;
-      row-gap: 65px;
+    .postcard-list {
+      width: 100%;
     }
 
+    .postcard-entry {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 42px;
+      align-items: start;
+
+      padding: 0 0 42px;
+      margin-bottom: 42px;
+
+      border-bottom: 1px solid #d9d9d5;
+    }
+
+    .post-title {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 2px;
+
+      margin: 28px 0 22px;
+    }
+
+    .short-line {
+      width: 28px;
+      height: 1px;
+      background: #bbb;
+      margin-bottom: 22px;
+    }
+    .excerpt {
+      font-size: 13px;
+      line-height: 2;
+      color: #666;
+      margin: 0 0 28px;
+    }
+    .read-more {
+      display: inline-block;
+
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #444;
+      text-decoration: none;
+
+      padding-bottom: 5px;
+      border-bottom: 1px solid #999;
+    }
+
+    .read-more:hover {
+      opacity: 0.55;
+    }
+    
     .postcard-card {
       min-width: 0;
     }
 
+    .postcard-info {
+      padding-top: 8px;
+    }
+    
     .photo-link {
       display: block;
       text-decoration: none;
@@ -158,7 +208,7 @@ layout: null
     .date {
       font-size: 10px;
       letter-spacing: 2px;
-      color: #999;
+      color: #777;
     }
 
 
@@ -203,12 +253,22 @@ layout: null
         padding: 40px 20px 70px;
       }
 
-      .postcard-grid {
+      .postcard-entry {
         grid-template-columns: 1fr;
-        row-gap: 50px;
+        gap: 22px;
+
+        padding-bottom: 45px;
+        margin-bottom: 45px;
+        }
+
+      .postcard-info {
+        padding-top: 0;
       }
 
-    }
+      .post-title {
+        font-size: 22px;
+        margin-top: 20px;
+      }
 
   </style>
 
@@ -250,11 +310,11 @@ layout: null
         POSTCARDS
       </h1>
 
-      <section class="postcard-grid">
+      <section class="postcard-list">
 
         {% for post in site.posts %}
 
-          <article class="postcard-card">
+          <article class="postcard-entry">
 
             <a href="{{ post.url }}" class="photo-link">
 
@@ -264,7 +324,7 @@ layout: null
 
             </a>
 
-            <div class="meta">
+            <div class="postcard-info">
 
               <div class="post-number">
                 POSTCARD #{{ post.number }}
@@ -273,6 +333,21 @@ layout: null
               <div class="date">
                 {{ post.date | date: "%d %b %Y" | upcase }}
               </div>
+
+              <h2 class="post-title">
+                {{ post.title }}
+              </h2>
+              <div class="short-line"></div>
+
+              {% if post.excerpt_text %}
+                <p class="excerpt">
+                  {{ post.excerpt_text }}
+                </p>
+              {% endif %}
+
+              <a href="{{ post.url }}" class="read-more">
+                READ →
+              </a>
 
             </div>
 
