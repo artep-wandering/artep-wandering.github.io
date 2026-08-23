@@ -171,9 +171,22 @@
     }
 
     .like {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #555;
+      font-family: inherit;
       font-size: 14px;
       letter-spacing: 1px;
       cursor: pointer;
+      transition: 0.2s;
+    }
+    .like:hover {
+      color: #111;
+    }
+
+    .like.liked {
+      color: #222;
     }
 
     .comment-intro {
@@ -260,6 +273,33 @@
 
 </head>
 
+<script>
+  const likeButton = document.getElementById("likeButton");
+  const storageKey = "postcard-001-liked";
+
+  if (localStorage.getItem(storageKey) === "true") {
+    showLiked();
+  }
+  function toggleLike() {
+    const liked = localStorage.getItem(storageKey) === "true";
+
+    if (liked) {
+      localStorage.removeItem(storageKey);
+      likeButton.innerHTML = "♡ LIKE";
+      likeButton.classList.remove("liked");
+    } else {
+      localStorage.setItem(storageKey, "true");
+      showLiked();
+    }
+  }
+
+  function showLiked() {
+    likeButton.innerHTML = "♥ I’m glad you like this postcard!";
+    likeButton.classList.add("liked");
+  }
+</script>
+
+  
 <body>
 
 <div class="page">
@@ -340,9 +380,9 @@
 
       <section class="feedback">
 
-        <div class="like">
+        <button class="like" id="likeButton" onclick="toggleLike()">
           ♡ LIKE
-        </div>
+        </button>
 
         <div class="comment-intro">
           如果這張明信片也讓你想起了什麼，歡迎留下一句話
