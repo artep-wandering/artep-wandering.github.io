@@ -231,10 +231,10 @@ layout: null
       </div>
 
       <nav class="menu">
-        <a href="#">HOME</a>
-        <a href="#">POSTCARDS</a>
-        <a href="#">JOURNAL</a>
-        <a href="#">ABOUT</a>
+        <a href="/">HOME</a>
+        <a href="/postcards">POSTCARDS</a>
+        <a href="/journal">JOURNAL</a>
+        <a href="/about">ABOUT</a>
       </nav>
 
       <div class="sidebar-bottom">
@@ -260,7 +260,8 @@ layout: null
             <img src="{{ post.image }}" alt="{{ post.title }}">
           </div>
         </a>
-
+        
+        <!-- hide postcard no. and date
         <div class="meta">
 
           <div class="post-number">
@@ -270,8 +271,7 @@ layout: null
           <div class="date">
             {{ post.date | date: "%d %b %Y" | upcase }}
           </div>
-          <!--
-          以下標題、摘要、READ 暫時隱藏
+         
           <h2 class="title">
             {{ post.title }}
           </h2>
