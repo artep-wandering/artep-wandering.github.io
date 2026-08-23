@@ -5,3 +5,8 @@ description: Photography, travel and words by Arte:p
 lang: zh-TW
 
 permalink: /postcards/:title/
+
+collections:
+  journal:
+    output: true
+    permalink: /journal/:name/
