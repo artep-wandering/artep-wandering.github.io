@@ -272,34 +272,7 @@
   </style>
 
 </head>
-
-<script>
-  const likeButton = document.getElementById("likeButton");
-  const storageKey = "postcard-001-liked";
-
-  if (localStorage.getItem(storageKey) === "true") {
-    showLiked();
-  }
-  function toggleLike() {
-    const liked = localStorage.getItem(storageKey) === "true";
-
-    if (liked) {
-      localStorage.removeItem(storageKey);
-      likeButton.innerHTML = "♡ LIKE";
-      likeButton.classList.remove("liked");
-    } else {
-      localStorage.setItem(storageKey, "true");
-      showLiked();
-    }
-  }
-
-  function showLiked() {
-    likeButton.innerHTML = "♥ I’m glad you like this postcard!";
-    likeButton.classList.add("liked");
-  }
-</script>
-
-  
+ 
 <body>
 
 <div class="page">
@@ -380,7 +353,7 @@
 
       <section class="feedback">
 
-        <button class="like" id="likeButton" onclick="toggleLike()">
+        <button id="likeButton" class="like">
           ♡ LIKE
         </button>
 
@@ -410,7 +383,35 @@
   </main>
 
 </div>
+  
+<script>
+  const likeButton = document.getElementById("likeButton");
+  const storageKey = "postcard-001-liked";
 
+  function updateLikeButton() {
+    const liked = localStorage.getItem(storageKey) === "true";
+
+    if (liked) {
+      likeButton.textContent = "♥ I’m glad you like this postcard!";
+    } else {
+      likeButton.textContent = "♡ LIKE";
+    }
+  }
+  likeButton.addEventListener("click", function () {
+    const liked = localStorage.getItem(storageKey) === "true";
+
+    if (liked) {
+      localStorage.removeItem(storageKey);
+    } else {
+      localStorage.setItem(storageKey, "true");
+    }
+
+    updateLikeButton();
+  });
+
+  updateLikeButton();
+</script>
+  
 </body>
 
 </html>
