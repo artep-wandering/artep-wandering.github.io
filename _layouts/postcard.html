@@ -6,20 +6,339 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>{{ page.title }} | 浪遊</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f7f5;
+      color: #222;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+    }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      min-height: 100vh;
+      padding: 68px 38px 38px;
+      border-right: 1px solid #d9d9d5;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #f7f7f5;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      margin-bottom: 54px;
+    }
+
+    .brand-title {
+      font-size: 34px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .brand-author {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #666;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
+    .content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 70px 55px 100px;
+    }
+
+    .article {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .post-number {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 32px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      margin-bottom: 55px;
+      background: #fdfcf8;
+      padding: 22px;
+      border: 1px solid #e4e1da;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 2px;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .postcard-mark {
+      margin-top: 14px;
+      text-align: right;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #999;
+    }
+
+    .writing {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.65;
+      margin: 0 0 38px;
+    }
+
+    .text {
+      font-size: 16px;
+      line-height: 2.15;
+      color: #444;
+    }
+
+    .signature {
+      margin-top: 38px;
+      text-align: right;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .feedback {
+      max-width: 620px;
+      margin: 75px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
+
+    .like {
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .like svg {
+      width: 24px;
+      height: 24px;
+      fill: transparent;
+      stroke: #999;
+      stroke-width: 1.8;
+      transition: fill 0.25s ease, stroke 0.25s ease;
+    }
+
+    .like.liked svg {
+      fill: #e88b8b;
+      stroke: #e88b8b;
+      stroke-width: 1;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 28px 22px 22px;
+        border-right: none;
+        border-bottom: 1px solid #d9d9d5;
+      }
+
+      .brand {
+        margin-bottom: 20px;
+      }
+
+      .brand-title {
+        font-size: 27px;
+      }
+
+      .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .sidebar-bottom {
+        display: none;
+      }
+
+      .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 35px 20px 70px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>POSTCARD #{{ page.number }}</h1>
+<div class="page">
 
-  <img src="{{ page.image }}" alt="{{ page.title }}">
+  <aside class="sidebar">
 
-  <h2>{{ page.title }}</h2>
+    <div class="brand">
+      <div class="brand-title">浪遊</div>
+      <div class="brand-author">Arte:p</div>
+    </div>
 
-  <div>
-    {{ content }}
-  </div>
+    <nav class="menu">
+      <a href="/">HOME</a>
+      <a href="/postcards/">POSTCARDS</a>
+      <a href="/journal/">JOURNAL</a>
+      <a href="/about/">ABOUT</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      Photography<br>
+      Travel<br>
+      Words<br><br>
+      © 2026 Arte:p
+    </div>
+
+  </aside>
+
+  <main class="content">
+
+    <article class="article">
+
+      <div class="post-number">
+        POSTCARD #{{ page.number }}
+      </div>
+
+      <div class="date">
+        {{ page.date | date: "%d %b %Y" | upcase }}
+      </div>
+
+      <div class="hero-photo">
+        <img src="{{ page.image }}" alt="{{ page.title }}">
+
+        <div class="postcard-mark">
+          POSTCARD #{{ page.number }} · Arte:p
+        </div>
+      </div>
+
+      <div class="writing">
+
+        <h1>{{ page.title }}</h1>
+
+        <div class="text">
+          {{ content }}
+        </div>
+
+      </div>
+
+      <section class="feedback">
+
+        <button
+          id="likeButton"
+          class="like"
+          type="button"
+          aria-label="喜歡這張明信片">
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="
+              M12 21
+              C10.2 19.2 3 14.6 3 8.5
+              C3 5.5 5.2 3.5 8 3.5
+              C9.8 3.5 11.2 4.6 12 6.8
+              C12.8 4.6 14.2 3.5 16 3.5
+              C18.8 3.5 21 5.5 21 8.5
+              C21 14.6 13.8 19.2 12 21
+              Z"/>
+          </svg>
+
+        </button>
+
+      </section>
+
+    </article>
+
+  </main>
+
+</div>
+
+<script>
+  const likeButton = document.getElementById("likeButton");
+
+  const storageKey =
+    "postcard-{{ page.number }}-liked";
+
+  if (likeButton) {
+
+    const liked =
+      localStorage.getItem(storageKey) === "true";
+
+    likeButton.classList.toggle("liked", liked);
+
+    likeButton.addEventListener("click", function () {
+
+      const isLiked =
+        likeButton.classList.contains("liked");
+
+      if (isLiked) {
+        localStorage.removeItem(storageKey);
+        likeButton.classList.remove("liked");
+      } else {
+        localStorage.setItem(storageKey, "true");
+        likeButton.classList.add("liked");
+      }
+
+    });
+  }
+</script>
 
 </body>
-
 </html>
