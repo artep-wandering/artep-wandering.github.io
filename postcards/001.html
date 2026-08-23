@@ -173,19 +173,25 @@
     .like {
       background: none;
       border: none;
-      padding: 0;
-      color: #999;
-      font-family: Raleway, sans-serif;
-      font-size: 22px;
-      font-weight: 300;
-      line-height: 1;
+      padding: 4px;
       cursor: pointer;
-      transition: 0.25s ease;
     }
+    .like svg {
+      width: 24px;
+      height: 24px;
 
-    .like.liked {
-      
-      color: #e88b8b;
+      fill: transparent;
+      stroke: #999;
+      stroke-width: 1.5;
+
+      transition:
+        fill 0.25s ease,
+        stroke 0.25s ease;
+    }
+    
+    .like.liked svg {
+      fill: #e88b8b;
+      stroke: #e88b8b;
     }
 
     .comment-intro {
@@ -353,7 +359,15 @@
       <section class="feedback">
 
         <button id="likeButton" class="like" type="button" aria-label="喜歡這張明信片">
-          ♡
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21
+                     C10 19 3 14.5 3 8.5
+                     C3 5.5 5.3 3.5 8 3.5
+                     C9.7 3.5 11.2 4.4 12 5.7
+                     C12.8 4.4 14.3 3.5 16 3.5
+                     C18.7 3.5 21 5.5 21 8.5
+                     C21 14.5 14 19 12 21Z"/>
+          </svg>
         </button>
 
         <div class="comment-intro">
