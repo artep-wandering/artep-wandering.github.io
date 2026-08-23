@@ -391,24 +391,22 @@
   const likeButton = document.getElementById("likeButton");
   const storageKey = "postcard-001-liked";
 
-  function updateLikeButton() {
+  if (likeButton) {
     const liked = localStorage.getItem(storageKey) === "true";
     likeButton.classList.toggle("liked", liked);
 
+    likeButton.addEventListener("click", function () {
+      const isLiked = likeButton.classList.contains("liked");
 
-  likeButton.addEventListener("click", function () {
-    const liked = localStorage.getItem(storageKey) === "true";
-
-    if (liked) {
-      localStorage.removeItem(storageKey);
-    } else {
-      localStorage.setItem(storageKey, "true");
-    }
-
-    updateLikeButton();
-  });
-
-  updateLikeButton();
+      if (isLiked) {
+        localStorage.removeItem(storageKey);
+        likeButton.classList.remove("liked");
+      } else {
+        localStorage.setItem(storageKey, "true");
+        likeButton.classList.add("liked");
+      }
+    });
+  }
 </script>
   
 </body>
