@@ -208,9 +208,9 @@ body {
   }
   
   .content {
-      margin-left: 0;
-      width: 100%;
-      padding: 28px 20px 60px;
+      margin-left: 0;              /*不需要固定 sidebar 的 280px */
+      width: 100%;                /* 使用整個手機寬度 */
+      padding: 28px 20px 60px;    /* 手機使用比較小的留白 */
   }
 
   .postcard-row {
