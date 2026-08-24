@@ -1,8 +1,10 @@
 /* SIDEBAR DESKTOP */
-/* sidebar_css_v0.0.6 */
+/* sidebar_css_v0.0.7 */
 
 .sidebar {
   width: 280px;
+  min-width: 280px;
+  max-width: 280px;
   height: 100vh;
 
   padding: 68px 38px 38px;
