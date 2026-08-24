@@ -1,10 +1,8 @@
 /* HOME DESTOP ONLY */
-/* VERSION: home_css_0.0.13 */
-@media (max-width: 1200px) and (min-width: 901px) {
-  {
+/* VERSION: home_css_0.0.14 */
+  * {
   box-sizing: border-box;
   }
-
     
   body {
     margin: 0;
@@ -83,8 +81,15 @@
   
   /* 每一組雙照片 */
   .postcard-row {
-    grid-template-columns: 1fr;
-    gap: 55px;
+    display: grid;
+  
+    grid-template-columns:
+      minmax(520px, 1.3fr)
+      minmax(360px, 1fr);
+  
+    column-gap: 30px;
+    row-gap: 80px;
+    align-items: start;
   }
 
   
@@ -169,5 +174,9 @@
     border-top: 1px solid #ddd;
     margin: 10px 0 80px;
   }
+  @media (min-width: 901px) {
+    .content {
+      min-width: 1020px;
+    }
 }
 
