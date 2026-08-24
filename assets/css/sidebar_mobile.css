@@ -1,6 +1,6 @@
 /* SIDEBAR MOBILE ONLY*/
-/* VERSION: sidebar_mobile_v0.0.3 */
-@media (max-width: 390px) {
+/* VERSION: sidebar_mobile_v0.0.4 */
+@media (max-width: 900px) {
 
   .sidebar {
     position: relative;
