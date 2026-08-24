@@ -171,3 +171,40 @@ body {
   margin: 10px 0 80px;
 }
 
+/* DEBUG — force HOME desktop layout */
+
+.content {
+  margin-left: 280px !important;
+  width: calc(100% - 280px) !important;
+  padding: 70px 55px 90px !important;
+}
+
+.postcard-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) !important;
+  column-gap: 30px !important;
+  width: 100% !important;
+}
+
+.postcard-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+.photo-link {
+  display: block !important;
+  width: 100% !important;
+}
+
+.photo {
+  width: 100% !important;
+  max-width: none !important;
+  aspect-ratio: 3 / 2 !important;
+}
+
+.photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
