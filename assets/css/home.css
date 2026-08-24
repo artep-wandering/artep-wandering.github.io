@@ -44,14 +44,14 @@ body {
 }
 
 .brand-title {
-  font-size: 40px;
+  font-size: 46px;
   letter-spacing: 10px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
 .brand-author {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 3px;
   color: #666;
 }
