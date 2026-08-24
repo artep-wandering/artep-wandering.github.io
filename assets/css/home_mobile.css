@@ -1,25 +1,42 @@
 /* HOME MOBILE ONLY mobile */
-/* VERSION: home_mobile_css_v0.0.4 */
+/* VERSION: home_mobile_css_v0.0.5 */
 
-@media (max-width: 1100px) {
+
+@media (max-width: 600px) {
+
+  /* ----------------------------------------
+     PAGE
+     ---------------------------------------- */
 
   .page {
     display: block;
     min-height: 0;
   }
 
+
+  /* ----------------------------------------
+     SIDEBAR MOBILE
+     ---------------------------------------- */
+
   .sidebar {
     position: relative;
+
     width: 100%;
     height: auto;
     min-height: 0;
+
     padding: 28px 22px 22px;
+
     border-right: none;
     border-bottom: 1px solid #d9d9d5;
   }
 
   .brand {
     margin-bottom: 20px;
+  }
+
+  .brand-title {
+    font-size: 27px;
   }
 
   .menu {
@@ -32,19 +49,34 @@
     display: none;
   }
 
+
+  /* ----------------------------------------
+     HOME CONTENT MOBILE
+     ---------------------------------------- */
+
   .content {
     margin-left: 0;
     width: 100%;
+
     padding: 28px 20px 60px;
   }
 
+
+  /* ----------------------------------------
+     POSTCARD MOBILE
+     ---------------------------------------- */
+
   .postcard-row {
     grid-template-columns: 1fr;
+
     gap: 55px;
+
     margin-bottom: 60px;
   }
 
   .title {
     font-size: 22px;
   }
+
 }
+
