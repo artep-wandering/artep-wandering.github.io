@@ -1,210 +1,173 @@
 /* HOME DESTOP ONLY */
-/* VERSION: home_css_0.0.12 */
-* {
+/* VERSION: home_css_0.0.13 */
+@media (max-width: 1200px) and (min-width: 901px) {
+  {
   box-sizing: border-box;
   }
 
     
-body {
-  margin: 0;
-  background: #f7f7f5;
-  color: #222;
-  font-family: Arial, "Noto Sans TC", sans-serif;
-}
-
-.page {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* 左側固定欄 */
-.sidebar {
-  width: 280px;
-  height: 100vh;
-  padding: 68px 38px 38px;
-  border-right: 1px solid #d9d9d5;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: #f1f2f2;
-  display: flex;
-  flex-direction: column;
+  body {
+    margin: 0;
+    background: #f7f7f5;
+    color: #222;
+    font-family: Arial, "Noto Sans TC", sans-serif;
+  }
+  
+  .page {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* 左側固定欄 */
+  .sidebar {
+    width: 280px;
+    height: 100vh;
+    padding: 68px 38px 38px;
+    border-right: 1px solid #d9d9d5;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #f1f2f2;
+    display: flex;
+    flex-direction: column;
+    }
+  
+  .brand {
+   margin-bottom: 54px;
+  }
+  
+  .brand-title {
+    font-size: 40px;
+    letter-spacing: 10px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  
+  .brand-author {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #666;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  
+  .menu a:hover {
+    color: #111;
+  }
+  
+  .sidebar-bottom {
+    margin-top: auto;
+    font-size: 11px;
+    color: #888;
+    line-height: 1.8;
+    letter-spacing: 1px;
+  }
+  
+  /* 右側 */
+    .content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      padding: 55px 45px 80px;
+    }
+  
+  /* 每一組雙照片 */
+  .postcard-row {
+    grid-template-columns: 1fr;
+    gap: 55px;
   }
 
-.brand {
- margin-bottom: 54px;
-}
-
-.brand-title {
-  font-size: 40px;
-  letter-spacing: 10px;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.brand-author {
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #666;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #555;
-  font-size: 12px;
-  letter-spacing: 2px;
-}
-
-.menu a:hover {
-  color: #111;
-}
-
-.sidebar-bottom {
-  margin-top: auto;
-  font-size: 11px;
-  color: #888;
-  line-height: 1.8;
-  letter-spacing: 1px;
-}
-
-/* 右側 */
-.content {
-  margin-left: 280px;
-  width: calc(100% - 280px);
-  padding: 70px 55px 90px;
-}
-
-/* 每一組雙照片 */
-.postcard-row {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  column-gap: 30px;
-  row-gap: 80px;
-  align-items: start;
-}
-
-.postcard-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.photo {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  background: #dededb;
-  overflow: hidden;
+  
+  .postcard-card {
+    display: flex;
+    flex-direction: column;
   }
-
-.photo img {
-  transition: opacity 0.3s ease;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-
-/* Wandering Filter v1 */
-  filter:
-    brightness(1.08)
-    contrast(0.88)
-    saturate(0.72);
-    sepia(0.04)
-    
-}
-.photo-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-.photo-link:hover img {
-  opacity: 0.88;
-}
-    
-.meta {
-  margin-top: 24px;
-}
-
-.post-number {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #777;
-  margin-bottom: 12px;
-}
-
-.date {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #999;
-  margin-bottom: 16px;
-}
-
-.title {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.55;
-  margin: 0 0 16px;
-}
-
-.excerpt {
-  font-size: 15px;
-  line-height: 1.9;
-  color: #555;
-  max-width: 560px;
-}
-
-.read-more {
-  display: inline-block;
-  margin-top: 18px;
-  text-decoration: none;
-  color: #222;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.divider {
-  border-top: 1px solid #ddd;
-  margin: 10px 0 80px;
-}
-
-/* DEBUG — force HOME desktop layout */
-
-.content {
-  margin-left: 280px !important;
-  width: calc(100% - 280px) !important;
-  padding: 70px 55px 90px !important;
-}
-
-.postcard-row {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) !important;
-  column-gap: 30px !important;
-  width: 100% !important;
+  
+  .photo {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: #dededb;
+    overflow: hidden;
+    }
+  
+  .photo img {
+    transition: opacity 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  
+  /* Wandering Filter v1 */
+    filter:
+      brightness(1.08)
+      contrast(0.88)
+      saturate(0.72);
+      sepia(0.04)
+      
+  }
+  .photo-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  .photo-link:hover img {
+    opacity: 0.88;
+  }
+      
+  .meta {
+    margin-top: 24px;
+  }
+  
+  .post-number {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+    margin-bottom: 12px;
+  }
+  
+  .date {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #999;
+    margin-bottom: 16px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.55;
+    margin: 0 0 16px;
+  }
+  
+  .excerpt {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #555;
+    max-width: 560px;
+  }
+  
+  .read-more {
+    display: inline-block;
+    margin-top: 18px;
+    text-decoration: none;
+    color: #222;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  
+  .divider {
+    border-top: 1px solid #ddd;
+    margin: 10px 0 80px;
+  }
 }
 
-.postcard-card {
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
-}
-
-.photo-link {
-  display: block !important;
-  width: 100% !important;
-}
-
-.photo {
-  width: 100% !important;
-  max-width: none !important;
-  aspect-ratio: 3 / 2 !important;
-}
-
-.photo img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-}
