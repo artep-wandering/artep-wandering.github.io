@@ -1,7 +1,7 @@
 /* HOME MOBILE ONLY mobile */
-/* VERSION: home_mobile_css_v0.0.1 */
+/* VERSION: home_mobile_css_v0.0.2 */
 
-@media (max-width: 900px) {
+@media (max-width: 390px) {
 
   .page {
     display: block;
