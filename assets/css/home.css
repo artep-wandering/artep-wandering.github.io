@@ -1,5 +1,5 @@
 /* HOME DESTOP ONLY */
-/* VERSION: home_css_0.0.14 */
+/* VERSION: home_css_0.0.15 */
   * {
   box-sizing: border-box;
   }
@@ -81,15 +81,14 @@
   
   /* 每一組雙照片 */
   .postcard-row {
-    display: grid;
-  
-    grid-template-columns:
-      minmax(520px, 1.3fr)
-      minmax(360px, 1fr);
-  
-    column-gap: 30px;
-    row-gap: 80px;
-    align-items: start;
+   display: grid;
+   grid-template-columns:
+     minmax(420px, 1.3fr)
+     minmax(300px, 1fr);
+ 
+   column-gap: 30px;
+   row-gap: 80px;
+   align-items: start;
   }
 
   
