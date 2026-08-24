@@ -1,5 +1,5 @@
 /* HOME DESTOP ONLY */
-/* VERSION: home_css_0.0.15 */
+/* VERSION: home_css_0.0.16 */
   * {
   box-sizing: border-box;
   }
@@ -173,9 +173,6 @@
     border-top: 1px solid #ddd;
     margin: 10px 0 80px;
   }
-  @media (min-width: 901px) {
-    .content {
-      min-width: 1020px;
-    }
+ 
 }
 
