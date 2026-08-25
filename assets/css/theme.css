@@ -1,12 +1,12 @@
 /* ========================================
    WANDERING GLOBAL THEME
-    VERSION: theme_css_v0.0.1
+    VERSION: theme_css_v0.0.3
    全站共用顏色
    ======================================== */
 
 :root {
-  --page-bg: #F8F5F0;
-  --sidebar-bg: #EEE8E1;
+  --page-bg: #fbf8f3;
+  --sidebar-bg: #e9e1d4;
 
   --text-main: #222;
   --text-secondary: #666;
