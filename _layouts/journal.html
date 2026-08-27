@@ -1,4 +1,4 @@
-<!-- layout_journal_v0.0.11-->
+<!-- layout_journal_v0.0.12-->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
@@ -126,7 +126,9 @@
       height: auto;
       display: block;
     }
-
+   
+    
+    /* JOURNAL TEXT */
     .text {
       font-family: "LXGW WenKai TC", serif;
       font-size: 16px;
@@ -145,7 +147,30 @@
       letter-spacing: 3px;
       color: #777;
     }
-
+    
+    /* JOURNAL MAGAZINE PHOTOS */
+    .photo-wide {
+      width: 100%;
+      margin: 55px 0;
+    }
+    
+    .photo-right {
+      width: 55%;
+      margin: 55px 0 55px auto;
+    }
+    
+    .photo-left {
+      width: 55%;
+      margin: 55px auto 55px 0;
+    }
+    
+    .photo-wide img,
+    .photo-right img,
+    .photo-left img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* MOBILE */
 
@@ -202,32 +227,8 @@
 <body>
 
 <div class="page">
-
-  <aside class="sidebar">
-
-    <div class="brand">
-      <div class="brand-title">浪遊</div>
-      <div class="brand-author">Arte:p</div>
-    </div>
-
-    <nav class="menu">
-      <a href="/">HOME</a>
-      <a href="/postcards/">POSTCARDS</a>
-      <a href="/journal/">JOURNAL</a>
-      <a href="/about/">ABOUT</a>
-      <a href="/contact/">CONTACT</a>
-    </nav>
-
-    <div class="sidebar-bottom">
-      Photography<br>
-      Travel<br>
-      Words<br><br>
-      © 2026 Arte:p
-    </div>
-
-  </aside>
-
-
+  {% include sidebar.html %}
+  
   <main class="content">
 
     <article class="article">
