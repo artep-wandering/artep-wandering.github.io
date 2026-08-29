@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-<!-- VERSION: about_index_v0.0.22-->
+<!-- VERSION: about_index_v0.0.23-->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
@@ -10,7 +10,6 @@ layout: null
   <title>About | 浪遊</title>
   {% include head.html %}
   <link rel="stylesheet" href="/assets/css/theme.css">
-  <link rel="stylesheet" href="/assets/css/sidebar.css">
 
 
   <style>
@@ -28,6 +27,62 @@ layout: null
     .page {
       display: flex;
       min-height: 100vh;
+    }
+
+          /* LEFT SIDEBAR */
+
+    .sidebar {
+      width: 280px;
+      min-height: 100vh;
+      padding: 68px 38px 38px;
+      border-right: 1px solid #d9d9d5;
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand {
+      margin-bottom: 54px;
+    }
+
+    .brand-title {
+      font-size: 34px;
+      letter-spacing: 10px;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .brand-author {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #666;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .menu a.active {
+      color: #111;
+    }
+
+    .sidebar-bottom {
+      margin-top: auto;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.8;
+      letter-spacing: 1px;
     }
 
     /* ABOUT */
